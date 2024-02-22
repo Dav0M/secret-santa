@@ -26,9 +26,12 @@ To run the script and send the emails:
 
 `python secretSanta.py`
 
-## Reflection and Plans
+## Reflection
 The motivation for this project was to create a solution for secret santa assignments without the use of third-party applications or websites. My friends and I have been doing a secret santa for a few years now and it gets tiresome giving up personal information and emails to a third-party when I can just handle it myself.
 
 Originally, the program used a `.csv` file for data and the [yagmail](https://pypi.org/project/yagmail/) library for email functionality, but they were both more trouble than they were worth compared to `.json` and the standard library. 
 
-The final logic, however, stayed mostly the same between the iterations. At first, I decided to determine who to assign a giftee to by random choice or in order, but that quickly breaks when considering exclusions sets for each participant. 
+The final logic, however, stayed mostly the same between the iterations. At first, I decided to determine who to assign a giftee to by random choice or in order, but that quickly breaks when considering exclusions sets for each participant. The solution I came to was choosing the next santa based on the least amount of potential giftees. There are some conditions and states where this also fails, but as long as the exclusions list isn't extreme it should run fine.
+
+## Plans
+I do intend to give this some kind of interface and make it interactive before the next secret santa cycle. Until then, it's functionality through the terminal will suffice.
